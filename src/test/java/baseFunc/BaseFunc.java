@@ -106,7 +106,7 @@ public class BaseFunc {
         writer.close();
     }
 
-    public void quit(){
+    public void quit() {
         driver.quit();
     }
 }

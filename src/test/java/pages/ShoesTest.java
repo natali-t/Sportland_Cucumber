@@ -17,7 +17,7 @@ public class ShoesTest {
         homePage.clickMenu();
         homePage.clickProducts();
         productPage = new ProductPage(baseFunc);
-        productPage.clickZeni();
+        productPage.clickZeniFutbols();
         productPage.clickIzpardosana();
         productPage.clickApaviIekstelpam();
         productPage.clickAdidas();

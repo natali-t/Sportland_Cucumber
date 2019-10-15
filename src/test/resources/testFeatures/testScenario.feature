@@ -3,11 +3,14 @@ Feature: test boys football shoes from Sportland site
     Given open "url" home page
     When we choose menu
     Then we choose products
-    And choose boys
-    And choose football
-    And sort by sale
+    And choose zeni and futbols
+    And sort by izpardosana
     And select filters:
-        |ADIDAS|
+      |APAVI_IEKSTELPAM|
+      |ADIDAS|
+    Then check sorted products have correct brand name
+    And check all sorted products are on sale
+    Then create and save text and json file with prod. <50EUR
 
 #    #1.Go to sportland.lv
 ##2. menu=> products

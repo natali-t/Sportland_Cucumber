@@ -25,7 +25,7 @@ public class ProductPage {
         this.baseFunc = baseFunc;
     }
 
-    public void clickZeni() {
+    public void clickZeniFutbols() {
         baseFunc.waitUntilVisible(ZENI);
         baseFunc.getElement(ZENI).click();
         baseFunc.waitUntilVisible(APAVI_FUTBOLS);
