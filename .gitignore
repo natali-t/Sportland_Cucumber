@@ -1,0 +1,9 @@
+.gradle
+.idea
+/gradle
+/build
+/gradlew
+*.bat
+!gradle-wrapper.jar
+txt_output.
+json_output.
