@@ -52,6 +52,10 @@ public class BaseFunc {
 //            y++;
 //        }
 //    }
+//    public  void sleep() throws InterruptedException {
+//        Thread.sleep(5000);
+//    }
+
 
 //    public void waitForElements(By locator) {
 //        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
@@ -68,9 +72,9 @@ public class BaseFunc {
         wait.until(ExpectedConditions.jsReturnsValue(javaScript));
     }
 
-    public void waitLoad() {
-        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfAllElements());
-    }
+//    public void waitLoad() {
+//        new WebDriverWait(driver, 5).until(ExpectedConditions.visibilityOfAllElements());
+//    }
 
     public void verifyBrandName(By locator, String brandname) {
         List<WebElement> brandList = getAllElements(locator);

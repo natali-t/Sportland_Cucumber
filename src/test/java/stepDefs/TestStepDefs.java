@@ -4,8 +4,6 @@ import baseFunc.Helpers;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
-import org.junit.jupiter.api.Assertions;
-import org.openqa.selenium.By;
 import pages.HomePage;
 import pages.ProductPage;
 import java.io.IOException;
@@ -16,7 +14,6 @@ public class TestStepDefs {
     private HomePage homePage;
     private ProductPage productPage;
     private Helpers helpers;
-    private final By FILTERS = By.xpath(".//div[@class='spodb-page-content__aside']/div/fieldset");
 
     @Given("open {string} home page")
     public void open_home_page(String url) {
@@ -25,7 +22,7 @@ public class TestStepDefs {
     }
 
     @When("we choose menu")
-    public void click_Menu() {
+    public void click_menu() {
         homePage.clickMenu();
     }
 
@@ -38,7 +35,6 @@ public class TestStepDefs {
     @Then("can choose zeni and futbols")
     public void click_Zeni() {
         productPage.clickZeniFutbols();
-        Assertions.assertFalse(baseFunc.isElementPresent(FILTERS), "Filters are not present");
     }
 
     @Then("can sort by izpardosana")
