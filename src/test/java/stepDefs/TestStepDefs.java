@@ -27,44 +27,44 @@ public class TestStepDefs {
         homePage.clickMenu();
     }
 
-    @Then("we choose products")
+    @Then("we can choose products")
     public void click_Products() {
         homePage.clickProducts();
         productPage = new ProductPage(baseFunc);
     }
 
-    @Then("choose zeni and futbols")
+    @Then("can choose zeni and futbols")
     public void click_Zeni() {
         productPage.clickZeniFutbols();
     }
 
-    @Then("sort by izpardosana")
+    @Then("can sort by izpardosana")
     public void click_Izpardosana() {
         productPage.clickIzpardosana();
     }
 //
-//    @And("select filters:")
+//    @Then("can select filters:")
 //    public void select_Filters() {
 //        productPage.clickApaviIekstelpam();
 //        productPage.clickAdidas();
 //    }
 
-//    @And("select filters:")
+//    @Then("can select filters:")
 //    public void select_filter(List<String> filterNames) {
 //
 //    }
 
-    @Then("check sorted products have correct brand name")
+    @Then("can check sorted products have correct brand name")
     public void check_Brandname() {
         productPage.checkBrandName();
     }
 
-    @Then("check all sorted products are on sale")
+    @Then("can check all sorted products are on sale")
     public void check_Discount() {
         productPage.checkDiscount();
     }
 
-    @Then("create and save text and json file with prod. <50EUR")
+    @Then("can create and save text and json file with prod. <50EUR")
     public void priceL_ist() throws IOException {
         productPage.priceList();
         baseFunc.quit();
