@@ -53,9 +53,9 @@ public class BaseFunc {
 //        }
 //    }
 
-    public void waitForElements(By locator) {
-        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
-    }
+//    public void waitForElements(By locator) {
+//        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(locator));
+//    }
 
     public void waitUntilVisible(By locator) {
         WebDriverWait wait = new WebDriverWait(driver, 10);

@@ -1,20 +1,22 @@
 package stepDefs;
-
 import baseFunc.BaseFunc;
+import baseFunc.Helpers;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
+import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
 import pages.HomePage;
 import pages.ProductPage;
-import pages.ShoesTest;
-
 import java.io.IOException;
+import java.util.List;
 
 public class TestStepDefs {
     private BaseFunc baseFunc = new BaseFunc();
     private HomePage homePage;
     private ProductPage productPage;
-    private ShoesTest shoesTest;
+    private Helpers helpers;
+    private final By FILTERS = By.xpath(".//div[@class='spodb-page-content__aside']/div/fieldset");
 
     @Given("open {string} home page")
     public void open_home_page(String url) {
@@ -36,6 +38,7 @@ public class TestStepDefs {
     @Then("can choose zeni and futbols")
     public void click_Zeni() {
         productPage.clickZeniFutbols();
+        Assertions.assertFalse(baseFunc.isElementPresent(FILTERS), "Filters are not present");
     }
 
     @Then("can sort by izpardosana")
@@ -49,10 +52,11 @@ public class TestStepDefs {
 //        productPage.clickAdidas();
 //    }
 
-//    @Then("can select filters:")
-//    public void select_filter(List<String> filterNames) {
-//
-//    }
+    @Then("can select filters:")
+    public void select_filter(List<String> filterNames) {
+        helpers = new Helpers(baseFunc);
+        helpers.selectFilters(filterNames);
+    }
 
     @Then("can check sorted products have correct brand name")
     public void check_Brandname() {

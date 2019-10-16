@@ -20,7 +20,6 @@ public class ProductPage {
 //    private final By DISCOUNTED_PRICE = By.xpath(".//p[@class='spodb-product-card__new-price']");
     private final By FULL_PROD_NAME = By.xpath(".//a[@class='spodb-product-card']");
 
-
     public ProductPage(BaseFunc baseFunc) {
         this.baseFunc = baseFunc;
     }
@@ -47,11 +46,13 @@ public class ProductPage {
         baseFunc.waitUntilVisible(ADIDAS_NAME);
         baseFunc.isElementPresent(ADIDAS_NAME);
     }
+
     public void checkBrandName()  {
         baseFunc.isElementPresent(ADIDAS_NAME);
         baseFunc.waitUntilVisible(ADIDAS_NAME);
         baseFunc.verifyBrandName(ADIDAS_NAME, "ADIDAS");
     }
+
     public void checkDiscount() {
         baseFunc.isElementPresent(DISCOUNT);
         baseFunc.verifySaleProducts(DISCOUNT);
