@@ -1,91 +1,72 @@
 package stepDefs;
 
 import baseFunc.BaseFunc;
-//import baseFunc.Helpers;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import cucumber.api.java.en.Given;
+import cucumber.api.java.en.Then;
+import cucumber.api.java.en.When;
 import pages.HomePage;
 import pages.ProductPage;
 import pages.ShoesTest;
-import cucumber.api.java.en.*;
-import io.cucumber.core.cli.Main;
 
 import java.io.IOException;
-import java.util.List;
 
 public class TestStepDefs {
-    private BaseFunc baseFunc= new BaseFunc();
+    private BaseFunc baseFunc = new BaseFunc();
     private HomePage homePage;
     private ProductPage productPage;
     private ShoesTest shoesTest;
-    private final String url = "sportland.lv";
 
-    @Given("open {url} home page")
+    @Given("open {string} home page")
     public void open_home_page(String url) {
-        baseFunc.openPage("url");
+        baseFunc.openPage(url);
         homePage = new HomePage(baseFunc);
     }
 
     @When("we choose menu")
-    public void clickMenu() {
+    public void click_Menu() {
         homePage.clickMenu();
     }
 
     @Then("we choose products")
-    public void clickProducts() {
+    public void click_Products() {
         homePage.clickProducts();
         productPage = new ProductPage(baseFunc);
     }
 
-    @And("choose zeni and futbols")
-    public void clickZeni() {
+    @Then("choose zeni and futbols")
+    public void click_Zeni() {
         productPage.clickZeniFutbols();
     }
 
-    @And("sort by izpardosana")
-    public void clickIzpardosana() {
+    @Then("sort by izpardosana")
+    public void click_Izpardosana() {
         productPage.clickIzpardosana();
     }
 //
 //    @And("select filters:")
-//    public void selectFilters() {
+//    public void select_Filters() {
 //        productPage.clickApaviIekstelpam();
 //        productPage.clickAdidas();
 //    }
 
-    @And("select filters:")
-    public void select_filter(List<String filterNames>) {
-
-    }
+//    @And("select filters:")
+//    public void select_filter(List<String> filterNames) {
+//
+//    }
 
     @Then("check sorted products have correct brand name")
-    public void checkBrandname() {
+    public void check_Brandname() {
         productPage.checkBrandName();
     }
 
-    @And("check all sorted products are on sale")
-    public void checkDiscount() {
+    @Then("check all sorted products are on sale")
+    public void check_Discount() {
         productPage.checkDiscount();
     }
 
     @Then("create and save text and json file with prod. <50EUR")
-    public void priceList() throws IOException {
+    public void priceL_ist() throws IOException {
         productPage.priceList();
         baseFunc.quit();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    }
+}

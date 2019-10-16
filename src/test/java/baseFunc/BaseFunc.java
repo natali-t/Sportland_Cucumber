@@ -75,9 +75,6 @@ public class BaseFunc {
     public void verifyBrandName(By locator, String brandname) {
         List<WebElement> brandList = getAllElements(locator);
         for (int i = 0; i < brandList.size(); i++) {
-//            System.out.println(i);
-//            System.out.println(brandname);
-//            System.out.println(brandList.get(i).getText());
             Assertions.assertTrue(brandList.get(i).getText().contains(brandname), "Brandname does not match");
         }
     }
@@ -85,8 +82,6 @@ public class BaseFunc {
     public void verifySaleProducts(By locator) {
         List<WebElement> salesProdList = getAllElements(locator);
         for (int i = 0; i < salesProdList.size(); i++) {
-//            System.out.println(i);
-//            System.out.println(salesProdList.get(i).getText());
             Assertions.assertTrue(salesProdList.get(i).getText().contains("%"), "Product is not on sale");
         }
     }

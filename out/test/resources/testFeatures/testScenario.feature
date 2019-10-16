@@ -1,18 +1,19 @@
 Feature: test boys football shoes from Sportland site
+
   Scenario: filter and print boys football shoes below 50 EUR
-    Given open "url" home page
-    When we choose menu
+    Given open "www.lv.sportland.lv" home page
+#    When we choose menu
 #    Then we choose products
-#    And choose zeni
-#    And choose futbols
+#    And choose zeni and futbols
 #    And sort by izpardosana
 #    And select filters:
 #      |APAVI_IEKSTELPAM|
 #      |ADIDAS|
 #    Then check sorted products have correct brand name
-#    And all sorted products are on sale
-#    Then create and save text file with prod. <50EUR
-#    And create and save json file with prod. <50EUR
+#    And check all sorted products are on sale
+#    Then create and save text and json file with prod. <50EUR
+
+#  Users/natali/Development/Sportland_Cucumber/src/test/java/stepDefs
 
 #    #1.Go to sportland.lv
 ##2. menu=> products
